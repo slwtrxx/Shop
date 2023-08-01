@@ -9,6 +9,9 @@ class CreateController extends Controller
 {
     public function __invoke()
    {
-    return view('product.create');
+    $tags = Tag::all();
+    $colors = Color::all();
+    $categories = Category::all();
+    return view('product.create', compact('tags', 'colors', 'categories'));
    }
 }
